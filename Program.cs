@@ -12,6 +12,7 @@ class FolderSynchronizer
     private int syncInterval;
     private string logFilePath;
 
+    // Constructor to initialize the synchronization parameters
     public FolderSynchronizer(string sourcePath, string replicaPath, int syncInterval, string logFilePath)
     {
         this.sourcePath = sourcePath;
@@ -20,15 +21,17 @@ class FolderSynchronizer
         this.logFilePath = logFilePath;
     }
 
+    // Entry point to start the synchronization loop
     public void Start()
     {
         while (true)
         {
-            SynchronizeFolders();
-            Thread.Sleep(syncInterval * 1000);
+            SynchronizeFolders(); // Perform folder synchronization
+            Thread.Sleep(syncInterval * 1000); // Wait for the specified sync interval
         }
     }
 
+    // Method to synchronize source and replica folders
     private void SynchronizeFolders()
     {
         Log("Synchronization started.");
@@ -74,6 +77,7 @@ class FolderSynchronizer
         Log("Synchronization completed.");
     }
 
+    // Method to synchronize directories between source and replica
     private void SynchronizeDirectories(string sourceDir, string replicaDir)
     {
         var sourceDirectories = Directory.GetDirectories(sourceDir, "*.*", SearchOption.AllDirectories);
@@ -106,6 +110,7 @@ class FolderSynchronizer
         }
     }
 
+    // Method to compare if two files are equal
     private bool FilesAreEqual(FileInfo first, FileInfo second)
     {
         if (first.Length != second.Length)
@@ -121,6 +126,7 @@ class FolderSynchronizer
         }
     }
 
+    // Method to log messages to console and file
     private void Log(string message)
     {
         var logMessage = $"{DateTime.Now}: {message}";
@@ -128,8 +134,10 @@ class FolderSynchronizer
         File.AppendAllText(logFilePath, logMessage + Environment.NewLine);
     }
 
+    // Main method to start the application
     static void Main(string[] args)
     {
+        // Validate and parse command-line arguments
         if (args.Length != 4)
         {
             Console.WriteLine("Usage: FolderSynchronizer <sourcePath> <replicaPath> <syncInterval> <logFilePath>");
@@ -141,6 +149,7 @@ class FolderSynchronizer
         var syncInterval = int.Parse(args[2]);
         var logFilePath = args[3];
 
+        // Create an instance of FolderSynchronizer and start synchronization
         var synchronizer = new FolderSynchronizer(sourcePath, replicaPath, syncInterval, logFilePath);
         synchronizer.Start();
     }

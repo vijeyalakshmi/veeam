@@ -12,3 +12,4 @@ C:\Users\Vijeyalakshmi\FolderSynchronizer\FolderSynchronizer\obj\Debug\net8.0\re
 C:\Users\Vijeyalakshmi\FolderSynchronizer\FolderSynchronizer\obj\Debug\net8.0\FolderSynchronizer.pdb
 C:\Users\Vijeyalakshmi\FolderSynchronizer\FolderSynchronizer\obj\Debug\net8.0\FolderSynchronizer.genruntimeconfig.cache
 C:\Users\Vijeyalakshmi\FolderSynchronizer\FolderSynchronizer\obj\Debug\net8.0\ref\FolderSynchronizer.dll
+C:\Users\Vijeyalakshmi\FolderSynchronizer\FolderSynchronizer\obj\Debug\net8.0\FolderSynchronizer.sourcelink.json
