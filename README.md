@@ -24,7 +24,7 @@ Runs synchronization at regular intervals defined by the user.
 ### Command line arguments
 
 ```bash
-dotnet run -- <sourcePath> <replicaPath> <syncInterval> <logFilePath>
+Usage: dotnet run -- <sourcePath> <replicaPath> <syncInterval> <logFilePath>
 ```
 1. sourcePath: Path to the source folder to synchronize from.
 2. replicaPath: Path to the replica folder to synchronize to.
